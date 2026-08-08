@@ -1,0 +1,111 @@
+```css
+/* ================= REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================= STATUS PULSE ================= */
+
+.status span {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 5px #00ffff;
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px #00ffff,
+            0 0 35px #00ffff;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #00ffff;
+    }
+
+}
+
+
+/* ================= FLOAT ================= */
+
+.card-icon,
+.skill-icon {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+/* ================= HERO GLOW ================= */
+
+.hero h1 span {
+    animation: neonGlow 3s ease-in-out infinite;
+}
+
+@keyframes neonGlow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 10px #00ffff,
+            0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    50% {
+        text-shadow:
+            0 0 20px #00ffff,
+            0 0 50px rgba(0, 255, 255, 0.8);
+    }
+
+}
+
+
+/* ================= CARD HOVER ================= */
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.15);
+    transition: 0.3s;
+}
+
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
